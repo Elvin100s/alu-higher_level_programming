@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-# Author - Your Name
+# Author - Elvin Cyubahiro
+
 
 def print_last_digit(number):
     """Function to print the last digit of a number."""
