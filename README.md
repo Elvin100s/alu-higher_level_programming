@@ -1,1 +1,1 @@
-This is what each script in python does
+this is what each script does
