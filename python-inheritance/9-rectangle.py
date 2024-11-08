@@ -3,6 +3,7 @@
 This module defines a BaseGeometry class.
 """
 
+
 class BaseGeometry:
     """
     This module defines a BaseGeometry class.
@@ -34,18 +35,17 @@ class BaseGeometry:
         """
         Validates that the provided value is an integer and greater than 0.
         """
-
         if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
 
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
 
+
 class Rectangle(BaseGeometry):
     """
     A class used to represent a Rectangle, inheriting from BaseGeometry.
     """
-
     def __init__(self, width, height):
         """
         Initialize a new Rectangle instance.
