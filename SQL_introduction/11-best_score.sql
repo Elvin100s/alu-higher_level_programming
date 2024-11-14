@@ -1,2 +1,4 @@
--- List records where score is greater than or equals 10
-SELECT score, name FROM second_table WHERE score >= 10 ORDER BY score DESC;
+-- Update Bob's score to 10 in the second_table
+UPDATE second_table
+SET score = 10
+WHERE name = 'Bob';
