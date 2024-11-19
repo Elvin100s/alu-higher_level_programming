@@ -6,7 +6,7 @@ This script fetches the status from a given URL using the requests library.
 import requests
 
 if __name__ == "__main__":
-    url = "https://alu-intranet.hbtn.io/status"
+    url = "http://0.0.0.0:5050/status"  # Updated URL
     response = requests.get(url)
     
     print("Body response:")
