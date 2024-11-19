@@ -1,17 +1,15 @@
 #!/usr/bin/python3
-"""
-This script fetches the status from a given URL using the urllib library.
-"""
+'''
+script that fetches https://intranet.hbtn.io/status
+'''
+import urllib.request as req
 
-import urllib.request
-
-if __name__ == "__main__":
-    url = "https://alu-intranet.hbtn.io/status"  # URL to fetch
-    with urllib.request.urlopen(url) as response:
-        body = response.read()  # Read the response body
+if __name__ == '__main__':
+    with req.urlopen('https://intranet.hbtn.io/status') as res:
+        content = res.read()
         print("Body response:")
-        print("\t- type: {}".format(type(body)))
-        print("\t- content: {}".format(body))
-        print("\t- utf8 content: {}".format(body.decode("utf-8")))
-
+        print("\t- type: {}".format(type(content)))
+        print("\t- content: {}".format(content))
+        print("\t- utf8 content: {}".format(content.decode('utf-8')))
+        
         
