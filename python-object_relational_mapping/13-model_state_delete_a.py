@@ -38,3 +38,4 @@ if __name__ == "__main__":
     # commit the changes and close the session
     session.commit()
     session.close()
+
