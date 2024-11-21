@@ -39,3 +39,8 @@ if __name__ == "__main__":
     session.commit()
     session.close()
 
+
+    # commit and close session
+    session.commit()
+    session.close()
+
