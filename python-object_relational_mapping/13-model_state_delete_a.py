@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Script that deletes all State objects with a name containing
-the letter a from the database
+the letter 'a' from the database
 Using module SQLAlchemy
 """
 
@@ -14,14 +14,23 @@ if __name__ == "__main__":
     # create an engine
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         argv[1], argv[2], argv[3]), pool_pre_ping=True)
+
     # create a configured "Session" class
     Session = sessionmaker(bind=engine)
+
     # create a Session
     session = Session()
+
+    # create the tables
     Base.metadata.create_all(engine)
-    state_del = session.query(State).filter(State.name.like('%a%')).all()
-    for delete in state_del:
-        session.delete(delete)
-    # commit and close session
+
+    # get the states with names containing 'a'
+    states_to_delete = session.query(State).filter(State.name.like('%a%')).all()
+
+    # delete the states
+    for state in states_to_delete:
+        session.delete(state)
+
+    # commit the changes and close the session
     session.commit()
     session.close()
