@@ -25,16 +25,17 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     # get the states with names containing 'a'
-    states_to_delete = session.query(State).filter(State.name.like('%a%')).all()
+    state_del = session.query(State).filter(State.name.like('%a%')).all()
 
     # print the output in the expected format
-    for state in states_to_delete:
-        print(f"{state.id}\t{state.name}")
+    for delete in state_del:
+        print(f"{delete.id}\t{delete.name}")
 
     # delete the states
-    for state in states_to_delete:
-        session.delete(state)
+    for delete in state_del:
+        session.delete(delete)
 
-    # commit the changes and close the session
+    # commit and close session
     session.commit()
     session.close()
+
