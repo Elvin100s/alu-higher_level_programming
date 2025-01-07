@@ -1,0 +1,2 @@
+new course
+# alu-scripting
